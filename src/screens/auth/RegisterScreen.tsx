@@ -57,7 +57,7 @@ export default function RegisterScreen({ navigation }: any) {
 
   return (
     <ImageBackground
-      source={require("../../../assets/burger-bg.jpg")} // ✅ add your burger image here
+      source={require("../../../assets/burger-bg.jpg")} 
       style={{ flex: 1 }}
       blurRadius={2}
     >
@@ -70,7 +70,7 @@ export default function RegisterScreen({ navigation }: any) {
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ padding: 16, paddingBottom: 40 }}
           >
-            {/* Header */}
+          
             <View style={{ alignItems: "center", marginTop: 22, marginBottom: 18 }}>
               <View
                 style={{
@@ -97,7 +97,7 @@ export default function RegisterScreen({ navigation }: any) {
               </Text>
             </View>
 
-            {/* Card */}
+           
             <View
               style={{
                 backgroundColor: "rgba(255,255,255,0.95)",
