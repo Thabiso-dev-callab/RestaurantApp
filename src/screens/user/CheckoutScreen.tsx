@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useCart } from "../../context/CartContext";
 import { createOrder } from "../../services/orders";
 
-// simple demo validations
+
 const isCardNumberValid = (v: string) => v.replace(/\s/g, "").length >= 12;
 const isExpiryValid = (v: string) => /^\d{2}\/\d{2}$/.test(v); // MM/YY
 const isCvvValid = (v: string) => /^\d{3,4}$/.test(v);
@@ -17,14 +17,14 @@ export default function CheckoutScreen({ navigation }: any) {
   const deliveryFee = 25;
   const total = useMemo(() => (subtotal ?? 0) + deliveryFee, [subtotal]);
 
-  // Prefill from user profile
+  
   const [address, setAddress] = useState(user?.address ?? "");
   const [cardNumber, setCardNumber] = useState(user?.card?.cardNumber ?? "");
   const [cardExpiry, setCardExpiry] = useState(user?.card?.cardExpiry ?? "");
   const [cardCvv, setCardCvv] = useState(user?.card?.cardCvv ?? "");
   const [placing, setPlacing] = useState(false);
 
-  // hooks already ran above - safe early return
+ 
   if (!user) {
     return (
       <View style={{ flex: 1, justifyContent: "center", padding: 16, backgroundColor: "#F6F6F6" }}>
@@ -66,7 +66,7 @@ export default function CheckoutScreen({ navigation }: any) {
     try {
       setPlacing(true);
 
-      // Save address + card to profile (so it shows on Profile next login)
+      
       await updateProfile({
         address: addr,
         card: {
@@ -76,7 +76,7 @@ export default function CheckoutScreen({ navigation }: any) {
         },
       });
 
-      // Create order (service will add status/total/createdAt)
+      
       const orderId = await createOrder({
         userId: user.id,
         customer: {
@@ -96,7 +96,7 @@ export default function CheckoutScreen({ navigation }: any) {
       Alert.alert("Order placed!", `Order #${orderId.slice(0, 6)} ✅`, [
         {
           text: "OK",
-          // go to Orders tab after placing order (optional)
+         
           onPress: () => navigation.navigate("Tabs", { screen: "Orders" }),
         },
       ]);
@@ -117,7 +117,7 @@ export default function CheckoutScreen({ navigation }: any) {
       </Text>
       <Text style={{ opacity: 0.7, marginTop: 4 }}>Confirm delivery & payment.</Text>
 
-      {/* Delivery */}
+     
       <Card style={{ borderRadius: 16, marginTop: 14 }}>
         <Card.Content style={{ gap: 10 }}>
           <Text style={{ fontWeight: "900" }}>Delivery Address</Text>
@@ -131,7 +131,7 @@ export default function CheckoutScreen({ navigation }: any) {
         </Card.Content>
       </Card>
 
-      {/* Card */}
+      
       <Card style={{ borderRadius: 16, marginTop: 12 }}>
         <Card.Content style={{ gap: 10 }}>
           <Text style={{ fontWeight: "900" }}>Card Details</Text>

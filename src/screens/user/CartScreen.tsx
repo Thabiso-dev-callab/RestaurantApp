@@ -1,4 +1,4 @@
-// src/screens/user/CartScreen.tsx
+
 import React, { useMemo } from "react";
 import { Alert, ImageBackground, View } from "react-native";
 import { Button, Divider, Text } from "react-native-paper";
@@ -24,12 +24,7 @@ export default function CartScreen({ navigation }: any) {
       return;
     }
 
-    /**
-     * ✅ CORRECT:
-     * CartScreen is inside Tabs.
-     * Checkout is inside UserStack.
-     * So we go to the parent (UserStack) and navigate there.
-     */
+    
     const parent = navigation.getParent?.();
     if (parent?.navigate) {
       parent.navigate("Checkout");
@@ -56,7 +51,7 @@ export default function CartScreen({ navigation }: any) {
           </Text>
         </View>
 
-        {/* Card */}
+        
         <View
           style={{
             flex: 1,
@@ -80,7 +75,7 @@ export default function CartScreen({ navigation }: any) {
             </View>
           ) : (
             <>
-              {/* Items */}
+             
               <View style={{ gap: 12 }}>
                 {items.map((ci) => {
                   const qty = ci.quantity;
@@ -114,7 +109,7 @@ export default function CartScreen({ navigation }: any) {
                         </Text>
                       </View>
 
-                      {/* Qty controls */}
+                     
                       <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
                         <Button
                           mode="outlined"
@@ -142,7 +137,7 @@ export default function CartScreen({ navigation }: any) {
 
               <Divider />
 
-              {/* Totals */}
+            
               <View style={{ gap: 6 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                   <Text style={{ opacity: 0.7 }}>Subtotal</Text>
