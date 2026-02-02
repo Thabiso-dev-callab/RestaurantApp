@@ -28,6 +28,9 @@ Admins can manage menu items and update order statuses.
   ### 🧑‍🍳 User Login
 -Users can register using any valid email not ending with @admin.com.
 
+## Figma designs
+https://www.figma.com/design/YNwzgeH5fHenHhPfYhQgUI/React-Native-Restaurant-App?node-id=0-1&t=vdNkqCQkNEGTuSht-1
+
 ## 🧩 Tech Stack
 -React Native (Expo)
 -TypeScript
@@ -70,7 +73,6 @@ service cloud.firestore {
     }
   }
 }
-
 
 ## 📌 Notes for Assessment / Rubric
 -Card details are demo only (stored to meet rubric requirements)
