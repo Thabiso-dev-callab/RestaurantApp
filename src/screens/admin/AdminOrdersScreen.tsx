@@ -22,7 +22,7 @@ export default function AdminOrdersScreen() {
       setLoading(true);
       const data = await fetchAllOrders();
 
-      // normalize old docs without status
+      
       const normalized = data.map((o) => ({
         ...o,
         status: (o.status ?? "pending") as OrderStatus,

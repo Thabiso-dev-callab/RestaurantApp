@@ -5,15 +5,15 @@ import { useAuth } from "../../context/AuthContext";
 import { fetchAllOrders } from "../../services/orders";
 import { Order } from "../../utils/types";
 
-const BG = "#F6F1EE"; // soft peach/cream
-const ACCENT = "#FF6B2D"; // orange
+const BG = "#F6F1EE"; 
+const ACCENT = "#FF6B2D";
 
 function formatMoney(amount: number) {
   return `R${amount.toFixed(0)}`;
 }
 
 function MiniChart({ values }: { values: number[] }) {
-  // simple “chart” blocks — no extra libs
+ 
   const max = Math.max(1, ...values);
   return (
     <View style={{ flexDirection: "row", gap: 8, alignItems: "flex-end", height: 90 }}>
@@ -56,7 +56,7 @@ export default function AdminDashboardScreen({ navigation }: any) {
     const totalOrders = orders.length;
     const totalRevenue = orders.reduce((sum, o) => sum + (o.total ?? 0), 0);
 
-    // last 8 “buckets” for mini chart (fake by slicing; you can improve later)
+    
     const chart = orders
       .slice(0, 8)
       .reverse()
@@ -74,7 +74,7 @@ export default function AdminDashboardScreen({ navigation }: any) {
       </Text>
       <Text style={{ opacity: 0.7, marginTop: -8 }}>Welcome: {user?.email}</Text>
 
-      {/* Stats */}
+     
       <Card style={{ borderRadius: 18, backgroundColor: "rgba(255,255,255,0.8)" }}>
         <Card.Content style={{ gap: 10 }}>
           <Text style={{ fontWeight: "800" }}>Total Orders</Text>
@@ -110,7 +110,7 @@ export default function AdminDashboardScreen({ navigation }: any) {
         </Card.Content>
       </Card>
 
-      {/* Sales chart */}
+      
       <Card style={{ borderRadius: 18, backgroundColor: "rgba(255,255,255,0.8)" }}>
         <Card.Content style={{ gap: 10 }}>
           <Text style={{ fontWeight: "800" }}>Sales chart</Text>
@@ -129,7 +129,7 @@ export default function AdminDashboardScreen({ navigation }: any) {
         </Card.Content>
       </Card>
 
-      {/* Actions */}
+     
       <View style={{ gap: 10, marginTop: 4 }}>
         <Button
           mode="contained"
