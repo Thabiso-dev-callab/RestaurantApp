@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }: any) {
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "#fff" }}>
-      {/* Hero */}
+     
       <ImageBackground
         source={{
           uri: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80",
@@ -54,14 +54,14 @@ export default function HomeScreen({ navigation }: any) {
         </View>
       </ImageBackground>
 
-      {/* Categories */}
+      
       <View style={{ paddingHorizontal: 12, paddingTop: 12 }}>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           style={{ flexGrow: 0 }}
         >
-          {/* ✅ avoid "gap" issues by using marginRight */}
+          
           <View style={{ flexDirection: "row" }}>
             {CATS.map((c, idx) => (
               <Chip
@@ -84,7 +84,7 @@ export default function HomeScreen({ navigation }: any) {
         </ScrollView>
       </View>
 
-      {/* List */}
+      
       <View style={{ padding: 12, paddingBottom: 30 }}>
         {loading ? (
           <View style={{ paddingTop: 20 }}>
@@ -95,10 +95,10 @@ export default function HomeScreen({ navigation }: any) {
             No items available in this category.
           </Text>
         ) : (
-          // ✅ avoid "gap" issues by using marginBottom
+          
           <View style={{ paddingTop: 12 }}>
             {list.map((item) => {
-              const price = Number(item.price); // ✅ safe if Firestore stored string
+              const price = Number(item.price); 
               return (
                 <Pressable
                   key={item.id}

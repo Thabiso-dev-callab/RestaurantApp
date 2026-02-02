@@ -12,7 +12,7 @@ export default function EditCartItemScreen({ route, navigation }: any) {
 
   const [qty, setQty] = useState(cartItem?.quantity ?? 1);
 
-  // if missing (deleted)
+  
   if (!cartItem) {
     return (
       <View style={{ flex: 1, justifyContent: "center", padding: 16 }}>
@@ -22,7 +22,7 @@ export default function EditCartItemScreen({ route, navigation }: any) {
     );
   }
 
-  // ✅ selection always defined for editing
+  
   const selection: CartSelection = cartItem.selection ?? { extras: [] };
 
   const onSave = () => {

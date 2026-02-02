@@ -30,7 +30,7 @@ export default function ItemDetailsScreen({ route, navigation }: any) {
     arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
 
   const goToCart = () => {
-    // ✅ Cart lives inside Tabs
+    
     navigation.navigate("Tabs", { screen: "Cart" });
   };
 
