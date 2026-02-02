@@ -1,0 +1,5 @@
+[33mb01667f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;32mfeature/auth-ui[m[33m)[m fix(auth): small UI and validation improvements
+[33m8199d11[m feat(auth): improve login and register UI
+[33mef7e0f6[m fix(auth): make register screen scrollable and cleaner
+[33m1e88017[m feat(auth): improve login and register UI
+[33mb891b98[m chore: initial project setup

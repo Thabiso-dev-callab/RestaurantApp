@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext";
 export default function ProfileScreen() {
   const { user, loading, updateProfile, logout } = useAuth();
 
-  // ✅ hooks always run
+ 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
@@ -38,8 +38,7 @@ export default function ProfileScreen() {
     );
   }
 
-  // ✅ IMPORTANT: do NOT navigate/reset here
-  // AppNavigator will automatically show Login/Register when user becomes null.
+  
   if (!user) {
     return (
       <ScrollView contentContainerStyle={{ padding: 16 }}>
@@ -85,7 +84,7 @@ export default function ProfileScreen() {
           try {
             setLoggingOut(true);
             await logout();
-            // ✅ NO navigation.reset / navigate / goBack
+           
           } finally {
             setLoggingOut(false);
           }
