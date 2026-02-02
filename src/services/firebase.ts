@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 
-// ✅ hard-cast to bypass broken TS typings in your project
+
 export const auth = (Auth as any).getAuth(app);
 
 export const db = getFirestore(app);
