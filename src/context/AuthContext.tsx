@@ -1,4 +1,4 @@
-// src/context/AuthContext.tsx
+
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 import NetInfo from "@react-native-community/netinfo";
 import * as Auth from "firebase/auth";
@@ -86,7 +86,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           const data = snap.data() as Partial<AppUser>;
           const merged = mergeUser(fbUser, data);
 
-          // Keep Firestore consistent (optional but good)
+          
           await setDoc(ref, merged, { merge: true });
 
           setUser(merged);
@@ -143,7 +143,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const net = await NetInfo.fetch();
     if (!net.isConnected) return;
 
-    // remove undefined (Firestore rejects undefined)
+   
     const clean = JSON.parse(JSON.stringify(updates));
     await updateDoc(doc(db, "users", uid), clean);
   };
