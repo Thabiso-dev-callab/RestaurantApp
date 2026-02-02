@@ -1,4 +1,4 @@
-// src/screens/user/MyOrdersScreen.tsx
+
 import React, { useCallback, useState } from "react";
 import { View, Pressable } from "react-native";
 import { Card, Text, ActivityIndicator } from "react-native-paper";
@@ -14,7 +14,7 @@ export default function MyOrdersScreen({ navigation }: any) {
   const [loading, setLoading] = useState(false);
   const [hint, setHint] = useState("");
 
-  // ✅ Subscribe ONLY while Orders tab is focused
+  
   useFocusEffect(
     useCallback(() => {
       if (!user?.id) return;
